@@ -33,9 +33,9 @@ def main():
     if "F" in inp:
         files=input()
         if "a" not in files:
-            with open("./test/"+files, "r") as files:
-                calc1=int(files.readline())
-                output=list(map(int, files.readline().split()))
+            with open("./test/"+files, "r") as file1:
+                calc1=int(file1.readline())
+                output=list(map(int,file1.readline().split()))
                 print(compute_height(calc1,output))
     pass
 
