@@ -2,25 +2,41 @@
 
 import sys
 import threading
-import numpy
+#import numpy
 
 
 def compute_height(n, parents):
-    # Write this function
-    max_height = 0
+    tree1={}
+    def height(i):
+        if i in tree1:
+            return tree1[i]
+        if i==-1:
+            return 0
+        h=1+height(parents[i])
+        tree1[i]=h
+        return h
+
+    max_height=0
+    for i in range(n):
+        max_height=max(max_height, height(i))
+
     # Your code here
     return max_height
 
 
 def main():
-    # implement input form keyboard and from files
-    
-    # let user input file name to use, don't allow file names with letter a
-    # account for github input inprecision
-    
-    # input number of elements
-    # input values in one variable, separate with space, split these values in an array
-    # call the function and output it's result
+    inp=input()
+    if "I" in inp:
+        inp1 = int(input())
+        put = list(map (int, input().split()))
+        print(compute_height(inp1, put))
+    if "F" in inp:
+        files=input()
+        if "a" not in files:
+            with open("./test/"+files, "r") as filea:
+                calc1 = int(filea.readline())
+                output = list(map(int, filea.readline().split()))
+                print(compute_height(calc1,output))
     pass
 
 # In Python, the default limit on recursion depth is rather low,
@@ -30,4 +46,4 @@ sys.setrecursionlimit(10**7)  # max depth of recursion
 threading.stack_size(2**27)   # new thread will get stack of such size
 threading.Thread(target=main).start()
 main()
-# print(numpy.array([1,2,3]))
+#print(numpy.array([1,2,3]))
