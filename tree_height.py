@@ -25,17 +25,17 @@ def compute_height(n, parents):
 
 
 def main():
-    inp=input()
-    if "I" in inp:
-        inp1=int(input())
-        put=list(map (int, input().split()))
+    b=input()
+    if "I" in b:
+        inp1 = int(input())
+        put = list(map (int, input().split()))
         print(compute_height(inp1, put))
-    if "F" in inp:
+    if "F" in b:
         files=input()
         if "a" not in files:
-            with open("./test/"+files, "r") as file1:
-                calc1=int(file1.readline())
-                output=list(map(int,file1.readline().split()))
+            with open("./test/"+files, "r") as filea:
+                calc1 = int(filea.readline())
+                output = list(map(int, filea.readline().split()))
                 print(compute_height(calc1,output))
     pass
 
