@@ -33,9 +33,9 @@ def main():
     if "F" in inp:
         files=input()
         if "a" not in files:
-            with open("./test/"+files, "r") as filee:
-                calc1 = int(filee.readline())
-                output = list(map(int, filee.readline().split()))
+            with open("./test/"+files, "r") as files:
+                calc1 = int(files.readline())
+                output = list(map(int, files.readline().split()))
                 print(compute_height(calc1,output))
     pass
 
@@ -46,4 +46,4 @@ sys.setrecursionlimit(10**7)  # max depth of recursion
 threading.stack_size(2**27)   # new thread will get stack of such size
 threading.Thread(target=main).start()
 main()
-print(numpy.array([1,2,3]))
+#print(numpy.array([1,2,3]))
