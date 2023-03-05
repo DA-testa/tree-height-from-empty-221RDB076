@@ -2,7 +2,7 @@
 
 import sys
 import threading
-import numpy
+#import numpy
 
 
 def compute_height(n, parents):
@@ -25,12 +25,12 @@ def compute_height(n, parents):
 
 
 def main():
-    b=input()
-    if "I" in b:
+    inp=input()
+    if "I" in inp:
         inp1 = int(input())
         put = list(map (int, input().split()))
         print(compute_height(inp1, put))
-    if "F" in b:
+    if "F" in inp:
         files=input()
         if "a" not in files:
             with open("./test/"+files, "r") as filea:
