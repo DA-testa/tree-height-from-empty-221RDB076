@@ -6,14 +6,14 @@ import numpy
 
 
 def compute_height(n, parents):
-    dop={}
+    tree1={}
     def height(i):
-        if i in dop:
-            return dop[i]
+        if i in tree1:
+            return tree1[i]
         if i==-1:
             return 0
         h=1+height(parents[i])
-        dop[i]=h
+        tree1[i]=h
         return h
 
     max_height = 0
@@ -25,18 +25,18 @@ def compute_height(n, parents):
 
 
 def main():
-    b=input()
-    if "I" in b:
-        c = int(input())
+    inp=input()
+    if "I" in inp:
+        inp1 = int(input())
         put = list(map (int, input().split()))
-        print(compute_height(c, put))
-    if "F" in b:
+        print(compute_height(inp1, put))
+    if "F" in inp:
         files=input()
         if "a" not in files:
             with open("./test/"+files, "r") as filee:
-                g = int(filee.readline())
+                calc1 = int(filee.readline())
                 output = list(map(int, filee.readline().split()))
-                print(compute_height(g,output))
+                print(compute_height(calc1,output))
     pass
 
 # In Python, the default limit on recursion depth is rather low,
