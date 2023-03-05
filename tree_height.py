@@ -16,7 +16,7 @@ def compute_height(n, parents):
         tree1[i]=h
         return h
 
-    max_height = 0
+    max_height=0
     for i in range(n):
         max_height=max(max_height, height(i))
 
@@ -27,15 +27,15 @@ def compute_height(n, parents):
 def main():
     inp=input()
     if "I" in inp:
-        inp1 = int(input())
-        put = list(map (int, input().split()))
+        inp1=int(input())
+        put=list(map (int, input().split()))
         print(compute_height(inp1, put))
     if "F" in inp:
         files=input()
         if "a" not in files:
             with open("./test/"+files, "r") as files:
-                calc1 = int(files.readline())
-                output = list(map(int, files.readline().split()))
+                calc1=int(files.readline())
+                output=list(map(int, files.readline().split()))
                 print(compute_height(calc1,output))
     pass
 
